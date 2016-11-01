@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="css/main.css">
+	<h3>Your Products</h3>
+	<div id='wrapper'>
+			<h4>Add a new product here:</h4>
+			<form ng-submit='createProduct()'>
+				<label>Product Name: <input type="text" ng-model='newProduct.name' placeholder='product name'></label>
+				<label>Image (url): <input type="text" ng-model='newProduct.imgUrl' placeholder='http://'></label>
+				<label>Description:<textarea rows="8" cols="40" ng-model='newProduct.description'></textarea></label>
+				<label>Initial Quantity:<select ng-model='newProduct.quantity'>
+							<option value='2'>2</option>
+							<option value='6'>6</option>
+							<option value='12'>12</option>
+							<option value='26'>26</option></select>
+				<input id='create' type="submit" value="Add Product">
+			</form>
+			<div>
+				<a class='atag' href="#/">Show more...</a>
+	        <div ng-repeat='product in products'>
+	            	<h3>{{product.name}}</h3>
+								<h5>{{product.description}}</h5>
+								<button ng-click='deleteProduct(product._id)'>Delete</button>
+								<img ng-show="product.imgUrl !== undefined" ng-src="{{product.imgUrl}}" alt="Image here">
+								<h5 id="buynow">Hurry! Only {{product.quantity}} left in stock!</h5>
+					</div>
+        </div>
+    </div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>New Animal</title>
+		<style>
+		input{
+			display: block;
+			margin-bottom: 10px;
+		}
+		</style>
+	</head>
+	<body>
+		<h3>Add a New Animal!</h3>
+		<form action="/animals" method="post">
+			<label>Name: <input type="text" name="name"></label>
+			<label>Species: <input type="text" name="species"></label>
+			<label>Noise: <input type="text" name="noise"></label>
+			<label>Age: <input type="number" name="age"></label>
+			<input type="submit" value="Add New Animal">
+		</form>
+
+	</body>
+</html>

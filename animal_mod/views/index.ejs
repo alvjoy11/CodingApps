@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		<title>Animals!</title>
+	</head>
+	<body>
+		<a href="/animals/new">Make a new animal</a>
+		<ul>
+			<% for (index in animals) { %>
+			<li><a href="/animals/<%=animals[index]._id%>"><%= animals[index].name %></a></li>
+			<li>Species: <%= animals[index].species %></li>
+			<li>Noise: <%= animals[index].noise %></li>
+			<li>Age: <%= animals[index].age %></li>
+				<hr>
+			<% } %>
+		</ul>
+	</body>
+</html>

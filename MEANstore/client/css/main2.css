@@ -1,0 +1,33 @@
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 7px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input{
+	display: block;
+	margin-bottom: 8px;
+}
+h4{
+	text-decoration: underline;
+}
+div{
+	padding-left: 12px;
+}
+#create{
+	background: #7FFFD4;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 8px;
+}
+select{
+	display: block;
+	margin-bottom: 15px;
+	width: auto;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		<title>Show One</title>
+	</head>
+	<body>
+		<a href="/">Home</a>
+		<h3>Showing Animal</h3>
+		<ul>
+			<li>Name: <%= animal.name %></a></li>
+			<li>Species: <%= animal.species %></li>
+			<li>Noise: <%= animal.noise %></li>
+			<li>Age: <%= animal.age %></li>
+		</ul>
+		<p><a href="/animals/<%=animal._id%>/edit">Edit Info</a></p>
+		<form action="/animals/<%=animal._id%>/remove" method="post"><input type="submit" value="Delete"></form>
+
+	</body>
+</html>

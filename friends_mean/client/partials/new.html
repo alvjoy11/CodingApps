@@ -1,0 +1,62 @@
+<style>
+fieldset{
+	display: inline-block;
+	padding-bottom: 20px;
+}
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td{
+	padding: 15px;
+}
+
+th{
+	text-align: left;
+}
+
+table{
+	border-spacing: 5px;
+}
+form{
+	display: inline-block;
+}
+input{
+	display: block;
+	margin-bottom: 10px;
+}
+a{
+	display: block;
+}
+
+</style>
+<fieldset><legend>List of Friends</legend>
+<div>
+	<form>
+		<label>Friend First Name: <input type="text" name='first_name' ng-model='newFriend.first_name' placeholder="First Name"></label>
+		<label>Friend Last Name: <input type="text" name='last_name' ng-model='newFriend.last_name' placeholder="Last Name"></label>
+		<label>Friend's Birthday: <input type="date" name='dob' ng-model='newFriend.dob'></label>
+
+		<input type="submit" value="Add Friend" ng-click="create(newFriend)">
+	</form>
+		<input ng-model="searchText" placeholder="Filter by Birthday">
+		<table>
+			<tr>
+				<th>Friend's Name</th>
+				<th>Friend's Birthday</th>
+				<th>Show</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			<tr ng-repeat="friend in friends | filter: searchText | orderBy:'dob'">
+				<td>{{friend.first_name}} {{friend.last_name}}</td>
+				<td>{{friend.dob | date:'MM/d/yyyy'}}</td>
+				<td><a href="#show/{{friend._id}}">Show</a></td>
+				<td><a href="#/edit/{{friend._id}}">Edit</a></td>
+				<td><button type="submit" ng-click="delete(friend._id)">Delete</button></td>
+			</tr>
+		</table>
+		</fieldset>
+			<a href="#/">Go back</a>
+</div>

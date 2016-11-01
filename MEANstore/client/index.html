@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='myApp'>
+	<head>
+		<meta charset="utf-8">
+		<title>Mini Store</title>
+		<style>
+		a{
+			display: inline-block;
+			margin-left: 30px;
+			font-size: 18px;
+		}
+		h1{
+			color: #751aff;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+		<script src="main.js" charset="utf-8"></script>
+		<script src="factories/customerFactory.js"></script>
+		<script src="factories/orderFactory.js"></script>
+		<script src="factories/productFactory.js"></script>
+    <script src="controllers/customerCtrl.js"></script>
+    <script src="controllers/idxCtrl.js"></script>
+		<script src="controllers/orderCtrl.js"></script>
+		<script src="controllers/productCtrl.js"></script>
+
+	</head>
+	<body>
+		<div>
+			<h1>Welcome to the Mini Store!</h1>
+			<nav>
+				<a href="#/">Dashboard</a>  <a href="#/products">Products</a>  <a href="#/orders">Orders</a>  <a href="#/customers">Customers</a>
+			</nav>
+
+				<div ng-view></div>
+			</div>
+	</body>
+</html>

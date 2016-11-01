@@ -1,0 +1,26 @@
+<style>
+	fieldset{
+		display: inline-block;
+		padding-bottom: 20px;
+	}
+input{
+		display: block;
+		margin-bottom: 10px;
+	}
+	a{
+		display: block;
+	}
+	form{
+		padding: 25px;
+	}
+</style>
+<fieldset><legend>Edit Friend's Info</legend>
+	<form>
+		<label>First Name: <input type="text" name='first_name' ng-model="friend.first_name"></label>
+		<label>Last Name: <input type="text" name='last_name' ng-model="friend.last_name"></label>
+		<label>Birthday: <input type="text" name='dob' value="{{friend.dob}}"></label>
+		<input type="submit" value="Edit Friend" ng-click="update(friend)">
+	</form>
+</fieldset>
+
+<a href="#/new">Go back</a>

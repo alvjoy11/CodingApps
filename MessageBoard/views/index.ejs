@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dojo Online Message Board</title>
+		<link rel="stylesheet" href="./main.css" charset="utf-8"/>
+	</head>
+	<body>
+			<h2>Welcome to the Online Dojo Message Board!</h2>
+			<hr>
+				<% if(typeof(errors) != 'undefined') { %>
+					<% for (var x in errors) { %>
+					<h3><%= errors[x].message %></h3>
+					<% } %>
+				<% } %>
+
+			<form action="/new" method="POST">
+				<label>Name:<input type="text" name="name" placeholder="Your Name"></label>
+				<h4>Message:</h4>
+	  	    	<textarea name="message" placeholder="Your Message Here"></textarea>
+						<button type="submit" value= "submit">Post Message</button>
+			</form>
+
+						<%  for (var i =0; i < messages.length; i++){ %>
+						<h3> Name: <%= messages[i].name %></h3>
+						<h3 id="message"> Message: <%= messages[i].message %>
+						</h3>
+						<hr>
+						<%  for (var j =0; j < messages[i].comments.length; j++){ %>
+
+						<h4> Name: <%= messages[i].comments[j].name %></h4>
+						<h4 id="comment"> Comment: <%= messages[i].comments[j].comment %>
+						</h4>
+							<% } %>
+			<form action="/new_comment/<%=messages[i]._id%>" method = "POST">
+				<label>Name:<input type="text" name="name" placeholder="Your Name"></label>
+				<h4>Comment:</h4>
+			<textarea name="comment" placeholder="Add Your Comment Here!"></textarea>
+			<button id="my_comment" type="submit" value= "submit">Post Your Comment!</button>
+			</form>
+						<hr>
+					<% } %>
+	</body>
+</html>

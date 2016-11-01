@@ -1,0 +1,30 @@
+<a href="#/dashboard">Dashboard</a> |
+<a href="#/logout">Logout</a>
+
+<a href="ID">{{topic._author.name}}</a> <p>posted a topic:</p>
+<h4>{{topic.topic}}</h4>
+<p>{{topic.description}}</p>
+<form ng-submit="postAnswer(answer, topic._id)">
+	<fieldset><legend>Answers</legend>
+		<textarea ng-model="answer.answer" rows="8" cols="40"></textarea>
+		<button>Post</button>
+	</fieldset>
+</form>
+	<hr>
+	<div ng-repeat="answer in topic.answers">
+		<a href="#/users/{{answer._author._id}}">{{answer._author.name}}</a>:  {{answer.answer}}
+
+		<div ng-repeat="comment in answer.comments">
+			<a href="#/users/{{comment._author._id}}">{{comment._author.name}}</a>: {{comment.comment}}
+			{{comment.likes}}<a ng-click="like(comment._id)">^</a> | {{comment.dislikes}}<a ng-click="dislike(comment._id)">v</a>
+
+		</div>
+		<form ng-submit="postComment(comment, answer._id)">
+			<fieldset><legend>Comments</legend>
+				<textarea ng-model="comment.comment" rows="8" cols="40"></textarea>
+				<button>Post Comment</button>
+			</fieldset>
+
+		</form>
+
+	</div>

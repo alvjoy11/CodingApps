@@ -1,0 +1,24 @@
+<style>
+ fieldset{
+	 display: inline-block;
+   padding: 10px;
+ }
+</style>
+<div>
+	<fieldset><legend>List of Players</legend>
+	<form>
+		<label>Player Name: <input type="text" ng-model='newPlayer.name'></label>
+		<input type="submit" value="Add Player" ng-click="addPlayer()">
+	</form>
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="player in players | filter: filter | orderBy:'name'">
+			<td ng-bind="player.name" ></td>
+			<td><button ng-click="delete($index)">Remove Player</button></td>
+		</tr>
+	</table>
+	</fieldset>
+</div>

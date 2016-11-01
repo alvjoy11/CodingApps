@@ -1,0 +1,26 @@
+<style>
+	fieldset{
+		display: inline-block;
+		padding-bottom: 20px;
+	}
+	a{
+		display: block;
+	}
+	ul{
+		list-style-type: none;
+	}
+	li{
+		margin-right: 40px;
+		padding-bottom: 10px;
+	}
+</style>
+<fieldset><legend>Show Friend's Info</legend>
+	<form>
+		<ul>
+			<li>First Name: {{friend.first_name}}</li>
+			<li>Last Name: {{friend.last_name}}</li>
+			<li>Birthday: {{friend.dob | date:'MM/d/yyyy'}}</li>
+		</ul>
+	</form></fieldset>
+
+<a href="#/new">Go back</a>

@@ -1,0 +1,19 @@
+<div>
+		<form ng-submit="login(loginUser)">
+			<fieldset>
+				<legend>Register</legend>
+				<label>Your Name:<input type="text" ng-model="loginUser.name"></label>
+				<label>Password:<input type="password" ng-model="loginUser.password"></label>
+					<button>Submit</button>
+			</fieldset>
+		</form></div>
+	<div>
+			<form ng-submit="register(registerUser)">
+			<fieldset>
+				<legend>Login</legend>
+				<label>Your Name:<input type="text" ng-model="registerUser.name"></label>
+				<label>Password:<input type="password" ng-model="registerUser.password"></label>
+				<button>Submit</button>
+			</fieldset>
+			</form>
+	</div>

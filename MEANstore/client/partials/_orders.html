@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="css/main2.css">
+<div>
+	<h4>Add a new order:</h4>
+			<form ng-submit='createOrder()'>
+				<label>Customer:<select ng-model='newOrder._customer'>
+		  	  		<option ng-repeat='customer in customers' value='{{customer._id}}'>{{customer.name}}</option></select>
+
+				<label>Order quantity:<select ng-model='newOrder.quantity'>
+										<option value='2'>2</option>
+                    <option value='6'>6</option>
+                    <option value='12'>12</option>
+                    <option value='26'>26</option>
+									</select>
+				<label>Product Name:<select ng-model='newOrder._product'>
+					  	  		<option ng-repeat='product in products' value='{{product._id}}'>{{product.name}}</option>
+				            <input id='create' type="submit" value="Add Order">
+			</form>
+			<input id='filter' type="text" ng-model='searchOrders' placeholder="Filter orders by customer">
+			<table>
+				<tr>
+					<th>Customer Name</th>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Date</th>
+					<th>Actions</th>
+				</tr>
+				<tr ng-repeat="order in orders | filter: searchOrders | orderBy: '_customer.name'">
+					<td>{{order._customer.name}}</td>
+					<td>{{order._product.name}}</td>
+          <td>{{order.quantity}}</td>
+					<td>{{order.created_at | date: 'MMM. dd, yyyy'}}</td>
+					<td><button ng-click='deleteOrder(order._id)'>Delete</button></td>
+				</tr>
+			</table>
+</div>
